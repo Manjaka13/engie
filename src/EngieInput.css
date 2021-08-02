@@ -1,0 +1,74 @@
+.engie-input {
+	width: 100%;
+	height: calc(100% - 50px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	position: absolute;
+	top: 50px;
+	opacity: 1;
+	transition: all 0.2s ease-out;
+}
+
+.engie-input--hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.engie-input__question {
+	font-size: 18pt;
+	color: rgb(80, 80, 80);
+	margin: 0;
+	padding: 20px 0 20px 0;
+}
+
+.engie-input__separator {
+	width: 40%;
+	height: 2px;
+	background: rgb(200, 200, 200);
+}
+
+.engie-input__box {
+	width: 100%;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.engie-input__input {
+	padding: 10px 20px 10px 20px;
+	border: none;
+	box-shadow: 0px 0px 1px black;
+}
+
+.engie-input__submit {
+	padding: 10px 20px 10px 20px;
+	border: none;
+	box-shadow: 0px 0px 1px black;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+}
+
+.engie-input__submit:hover {
+	background: rgb(220, 220, 220);
+}
+
+.engie-input__caption {
+	color: red;
+	text-align: center;
+	pointer-events: none;
+	opacity: 0;
+	transition: all 0.2s ease-out;
+}
+
+.engie-input__caption--active {
+	opacity: 1;
+	color: red;
+	text-align: center;
+	pointer-events: none;
+	transition: all 0.2s ease-out;
+}
