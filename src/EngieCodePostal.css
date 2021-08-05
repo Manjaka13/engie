@@ -1,0 +1,149 @@
+.engie-code-postal {
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.2s ease-out;
+	position: absolute;
+	top: 0;
+}
+
+.engie-code-postal--hidden {
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.2s ease-out;
+	position: absolute;
+	top: 0;
+}
+
+.engie-code-postal__title {
+	text-align: center;
+	color: rgb(50, 50, 50);
+	font-size: 20pt;
+	padding: 40px 20px 40px 20px;
+	margin: 0;
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+	.engie-code-postal__title {
+		font-size: 16pt;
+		padding: 50px 10px;
+		text-align: justify;
+	}
+}
+
+.engie-code-postal__back {
+	padding: 10px 20px 10px 20px;
+	margin-right: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(247, 247, 247);
+	font-size: 13pt !important;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	pointer-events: auto;
+}
+
+.engie-code-postal--hidden .engie-code-postal__back {
+	pointer-events: none;
+}
+
+.engie-code-postal__back:hover {
+	background: rgb(200, 200, 200);
+}
+
+.engie-code-postal__back .icon {
+	margin-right: 5px;
+}
+
+.engie-code-postal__form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	position: relative;
+	border-radius: 20px;
+	box-shadow: 0px 0px 1px black;
+	margin-top: 100px;
+	margin: 100px 10px 0 10px;
+}
+
+.engie-code-postal__icon {
+	padding: 0 20px 0 20px;
+	height: 100%;
+	background: rgb(247, 247, 247);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px 0 0 20px;
+	color: rgb(80, 80, 80);
+}
+
+.engie-code-postal__input {
+	padding: 0 20px 0 20px;
+	height: 100%;
+	background: rgb(247, 247, 247);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(80, 80, 80);
+	border: none;
+	border-radius: 0;
+	width: 100%;
+	font-size: 13pt;
+}
+
+.engie-code-postal__submit {
+	padding: 0 20px 0 20px;
+	height: 100%;
+	background: rgb(225, 225, 225);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(80, 80, 80);
+	border: none;
+	border-radius: 0 20px 20px 0;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	font-size: 13pt;
+}
+
+.engie-code-postal__submit:hover {
+	background: rgb(200, 200, 200);
+}
+
+.engie-code-postal__suggestion {
+	width: calc(100% - 180px);
+	background: rgb(247, 247, 247);
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 41px;
+	left: 55px;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0px 0px 1px black;
+}
+
+.engie-code-postal__suggestion-item {
+	padding: 10px 20px 10px 20px;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	font-size: 13pt;
+}
+
+.engie-code-postal__suggestion-item:hover {
+	background: rgb(230, 230, 230);
+}
+
+.engie-code-postal__error {
+	text-align: center;
+	padding: 20px 0 0 0;
+	margin: 0;
+	color: red;
+}

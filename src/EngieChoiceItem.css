@@ -1,0 +1,89 @@
+.engie-choice-item {
+	width: 200px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 20px 10px 20px;
+	transition: all 0.1s ease-out;
+	cursor: pointer;
+	border-radius: 10px;
+	padding-top: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+	.engie-choice-item {
+		width: 130px;
+		margin: 10px;
+	}
+}
+
+.engie-choice-item:hover {
+	background: rgb(247, 247, 247);
+	box-shadow: 0px 0px 10px rgb(200, 200, 200);
+}
+
+.engie-choice-item:active {
+	box-shadow: 0px 0px 20px black;
+}
+
+.engie-choice-item__icon {
+	width: 100px;
+	height: 100px;
+	background: #0af;
+	border-radius: 50%;
+	color: white;
+	font-size: 40pt;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.1s ease-out;
+}
+
+@media only screen and (max-width: 800px) {
+	.engie-choice-item__icon {
+		width: 80px;
+		height: 80px;
+		font-size: 30pt;
+	}
+}
+
+.engie-choice-item:hover .engie-choice-item__icon {
+	font-size: 47pt;
+}
+
+.engie-choice-item:active .engie-choice-item__icon {
+	font-size: 10pt;
+}
+
+@media only screen and (max-width: 800px) {
+	.engie-choice-item:hover .engie-choice-item__icon {
+		font-size: 38pt;
+	}
+}
+
+.engie-choice-item__choice {
+	font-size: 13pt;
+	color: rgb(80, 80, 80);
+	width: 100%;
+	text-align: center;
+	pointer-events: none;
+	padding: 20px 10px 20px 10px;
+	margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
+	.engie-choice-item__choice {
+		padding: 0;
+		padding-top: 10px;
+	}
+}
+
+.engie-choice-item__label {
+	font-size: 11pt;
+	color: rgb(120, 120, 120);
+	text-align: justify;
+	padding: 0 10px 20px 10px;
+	margin: 0;
+	pointer-events: none;
+}

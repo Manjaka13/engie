@@ -1,90 +1,76 @@
 .engie-choice {
 	width: 100%;
-	height: calc(100% - 50px);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	overflow: hidden;
-	position: absolute;
-	top: 50px;
 	opacity: 1;
 	transition: all 0.2s ease-out;
+	pointer-events: auto;
+	position: absolute;
+	top: 0;
 }
 
 .engie-choice--hidden {
 	opacity: 0;
+	transition: all 0.2s ease-out;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+}
+
+.engie-choice__title {
+	text-align: center;
+	color: rgb(50, 50, 50);
+	font-size: 20pt;
+	padding: 40px 20px 50px 20px;
+	margin: 0;
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+	.engie-choice__title {
+		font-size: 16pt;
+		padding: 50px 10px;
+		text-align: justify;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.engie-choice__title {
+		padding: 50px 10px 0 10px;
+	}
+}
+
+.engie-choice__back {
+	padding: 10px 20px 10px 20px;
+	margin-right: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(247, 247, 247);
+	font-size: 13pt !important;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	pointer-events: auto;
+}
+
+.engie-choice--hidden .engie-choice__back {
 	pointer-events: none;
 }
 
-.engie-choice__question {
-	font-size: 18pt;
-	color: rgb(80, 80, 80);
-	margin: 0;
-	padding: 20px 0 20px 0;
-}
-
-.engie-choice__separator {
-	width: 40%;
-	height: 2px;
+.engie-choice__back:hover {
 	background: rgb(200, 200, 200);
 }
 
-.engie-choice__box {
+.engie-choice__back .icon {
+	margin-right: 5px;
+}
+
+.engie-choice__list {
 	width: 100%;
-	height: 200px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
-	box-shadow: 0px 0px 2px red;
-}
-
-.engie-choice__cblock {
-	width: 200px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-left: 40px;
-	margin-right: 40px;
-}
-
-.engie-choice__label {
-	text-align: justify;
-	font-size: 9pt;
-	color: rgb(120, 120, 120);
-	pointer-events: none;
-}
-
-.engie-choice__choice {
-	width: 100px;
-	height: 100px;
-	background: #0af;
-	border-radius: 50%;
-	margin: 0;
-	margin-bottom: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	cursor: pointer;
-	font-size: 10pt;
-	transition: all 0.2s ease-out;
-	text-align: center;
-}
-
-.engie-choice__choice:hover {
-	box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.engie-choice__choice:active {
-	font-size: 5pt;
-	box-shadow: 0px 0px 20px rgb(50, 50, 50);
-}
-
-.engie-choice__text {
-	color: white;
-	pointer-events: none;
-	padding: 0;
-	margin: 0;
-	font-weight: bold;
+	align-items: flex-start;
+	flex-wrap: wrap;
 }

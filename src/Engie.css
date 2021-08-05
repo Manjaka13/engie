@@ -21,9 +21,17 @@ body,
 	justify-content: center;
 }
 
-.engie {
+@media only screen and (max-width: 1250px) {
+	#app {
+		height: auto;
+		overflow: hidden;
+	}
+}
+
+.engie,
+.engie-resultat {
 	width: 1200px;
-	height: 400px;
+	height: 460px;
 	background: white;
 	display: flex;
 	flex-direction: column;
@@ -34,119 +42,211 @@ body,
 	position: relative;
 }
 
+.engie-resultat {
+	height: 700px;
+	overflow: auto;
+	box-shadow: none;
+}
+
 @media only screen and (max-width: 1400px) {
 	.engie {
 		width: 80%;
 	}
+	.engie-resultat {
+		height: 90%;
+	}
 }
 
-.engie__wrapper {
+@media only screen and (max-width: 1000px) {
+	.engie,
+	.engie-resultat {
+		width: 100%;
+		height: 100vh;
+	}
+}
+
+/* @media only screen and (max-width: 1000px) {
+	.engie-resultat {
+		height: auto;
+	}
+} */
+
+.engie__tarif-nuit {
 	width: 100%;
-}
-
-.engie .loader {
-	color: #0af;
-	font-size: 20px;
-	width: 1em;
-	height: 1em;
-	border-radius: 50%;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	text-indent: -9999em;
-	-webkit-animation: load4 1.3s infinite linear;
-	animation: load4 1.3s infinite linear;
-	-webkit-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	transform: translateZ(0);
-}
-@-webkit-keyframes load4 {
-	0%,
-	100% {
-		box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
-			0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-	}
-	12.5% {
-		box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
-			0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-	}
-	25% {
-		box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
-			0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-	}
-	37.5% {
-		box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
-			0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-	}
-	50% {
-		box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
-			0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-	}
-	62.5% {
-		box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-			0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-	}
-	75% {
-		box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em,
-			2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em,
-			-2em -2em 0 0;
-	}
-	87.5% {
-		box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-			0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-	}
-}
-@keyframes load4 {
-	0%,
-	100% {
-		box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
-			0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-	}
-	12.5% {
-		box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
-			0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-	}
-	25% {
-		box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
-			0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-	}
-	37.5% {
-		box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
-			0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-	}
-	50% {
-		box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
-			0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-	}
-	62.5% {
-		box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-			0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-	}
-	75% {
-		box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em,
-			2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em,
-			-2em -2em 0 0;
-	}
-	87.5% {
-		box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
-			0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-	}
-}
-
-.engie__compteur {
 	display: flex;
+	justify-content: center;
 	align-items: center;
-}
-
-.engie__compteur .engie__label {
-	padding: 0;
-	margin: 0;
-	padding-left: 10px;
-	font-size: 9pt;
-	color: rgb(120, 120, 120);
-	cursor: pointer;
+	font-size: 13pt;
+	padding: 0 10px 0 10px;
 }
 
 .engie__checkbox {
-	cursor: pointer;
+	margin-right: 10px;
+}
+
+.engie__resultat {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: none;
+}
+
+@media only screen and (max-width: 1000px) {
+	.engie__resultat {
+		height: auto;
+	}
+}
+
+.engie__suggestion {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1250px) {
+	.engie__suggestion {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.engie__resultat-item,
+.engie__resultat-item--special {
+	width: 32%;
+	height: 300px;
+	box-shadow: 5px 5px 20px rgb(200, 200, 200);
+	border-radius: 20px;
+	transition: all 0.2s ease-out;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+@media only screen and (max-width: 1250px) {
+	.engie__resultat-item,
+	.engie__resultat-item--special {
+		width: 500px;
+		height: auto;
+		margin-bottom: 50px;
+		padding-bottom: 30px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.engie__resultat-item,
+	.engie__resultat-item--special {
+		width: 90%;
+	}
+}
+
+.engie__resultat-item:hover,
+.engie__resultat-item--special:hover {
+	box-shadow: 5px 5px 50px rgb(200, 200, 200);
+}
+
+.engie__resultat-item--special {
+	justify-content: flex-start;
+	height: 400px;
+}
+
+@media only screen and (max-width: 1250px) {
+	.engie__resultat-item--special {
+		justify-content: flex-start;
+		height: 300px;
+	}
+}
+
+.engie__resultat-item .title {
+	text-align: center;
+	padding: 50px 20px 20px 20px;
+	margin: 0;
+	font-size: 20pt;
+	color: black;
+}
+
+.engie__resultat-item .erased_price {
+	text-align: center;
+	text-decoration: line-through;
+	margin: 0;
+	padding: 0;
+	color: rgb(140, 140, 140);
+	font-size: 12pt;
+}
+
+.engie__resultat-item .price {
+	text-align: center;
+	margin: 0;
+	padding: 20px 20px 0 20px;
+	color: rgb(100, 100, 100);
+	font-size: 40pt;
+}
+
+.engie__resultat-item .month {
+	text-align: center;
+	margin: 0;
+	padding: 0 20px 20px 20px;
+	color: rgb(100, 100, 100);
+	font-size: 13pt;
+}
+
+.engie__resultat-item .text {
+	text-align: center;
+	padding: 0 50px 20px 50px;
+	color: black;
+}
+
+.engie__resultat-item .separator {
+	width: 80%;
+	height: 1px;
+	background: rgb(220, 220, 220);
+	margin-bottom: 20px;
+}
+
+.engie__resultat-item .box {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 80%;
+	padding: 10px 0 10px 0;
+}
+
+.engie__resultat-item .icon {
+	color: green;
+	margin-right: 10px;
+	font-size: 15pt;
+}
+
+.engie__resultat-item .label {
+	color: rgb(80, 80, 80);
+	font-size: 13pt;
+	padding: 0;
+	margin: 0;
+}
+
+.engie__title {
+	font-size: 30pt;
+	text-align: center;
+	padding: 0 10px 0 10px;
+}
+
+.banner,
+.promo {
+	position: absolute;
+	top: -34px;
+	background: #ff5722;
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+	color: white;
+	font-size: 10pt;
+}
+
+.promo {
+	background: green;
 }

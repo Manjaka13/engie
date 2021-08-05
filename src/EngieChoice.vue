@@ -1,68 +1,72 @@
 <template>
-	<div :class="current_class">
-		<h3 class="engie-choice__question">{{ question }}</h3>
-		<div class="engie-choice__separator"></div>
-		<div class="engie-choice__box">
-			<div
-				class="engie-choice__cblock"
-				v-for="(c, key) in choice"
+	<div
+		v-if="choices.length > 0"
+		:class="displayed ? 'engie-choice' : 'engie-choice--hidden'"
+	>
+		<h3 v-if="title.length > 0" class="engie-choice__title">
+			<span class="engie-choice__back" @click="get_back">
+				<FontAwesomeIcon class="icon" icon="caret-left" />
+				Retour
+			</span>
+			{{ title }}
+		</h3>
+		<div class="engie-choice__list">
+			<EngieChoiceItem
+				v-for="(choice, key) in choices"
 				:key="key"
-			>
-				<div class="engie-choice__choice" @click.prevent="answer(c)">
-					<p class="engie-choice__text">{{ c }}</p>
-				</div>
-				<p v-if="label.length > 0" class="engie-choice__label">
-					{{ label[key] }}
-				</p>
-			</div>
+				:icon="choices_icon.length > key ? choices_icon[key] : ''"
+				:choice="choice"
+				:label="choices_label.length > key ? choices_label[key] : ''"
+				@choose="get_choice"
+			/>
 		</div>
-		<slot name="additionnal" />
+		<slot name="slot" />
 	</div>
 </template>
 
 <script>
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import "./EngieChoice.css";
+import EngieChoiceItem from "./EngieChoiceItem.vue";
+
+library.add(faCaretLeft);
 
 export default {
 	name: "EngieChoice",
+	components: {
+		FontAwesomeIcon,
+		EngieChoiceItem,
+	},
 	props: {
+		title: {
+			type: String,
+			default: "",
+		},
+		choices_icon: {
+			type: Array,
+			default: () => [],
+		},
+		choices: {
+			type: Array,
+			default: () => [],
+		},
+		choices_label: {
+			type: Array,
+			default: () => [],
+		},
 		displayed: {
 			type: Boolean,
 			default: false,
 		},
-		question: {
-			type: String,
-			default: "Question ?",
-		},
-		choice: {
-			type: Array,
-			default: () => [],
-		},
-		label: {
-			type: Array,
-			default: () => [],
-		},
-	},
-	data() {
-		return {
-			current_class: "engie-choice",
-		};
 	},
 	methods: {
-		answer(result) {
-			this.$emit("answer", result);
+		get_choice(answer) {
+			this.$emit("choose", answer);
 		},
-		update_ui() {
-			if (this.displayed) this.current_class = "engie-choice";
-			else this.current_class = "engie-choice engie-choice--hidden";
-		},
-	},
-	watch: {
-		displayed: {
-			immediate: true,
-			handler() {
-				this.update_ui();
-			},
+		get_back() {
+			this.$emit("get_back");
 		},
 	},
 };

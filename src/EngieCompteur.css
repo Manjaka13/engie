@@ -1,0 +1,169 @@
+.engie-compteur {
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.2s ease-out;
+	position: absolute;
+	top: 0;
+}
+
+.engie-compteur--hidden {
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.2s ease-out;
+	position: absolute;
+	top: 0;
+}
+
+.engie-compteur__title {
+	text-align: center;
+	color: rgb(50, 50, 50);
+	font-size: 20pt;
+	padding: 40px 20px 20px 20px;
+	margin: 0;
+	pointer-events: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+	.engie-compteur__title {
+		font-size: 16pt;
+		padding: 50px 10px;
+		text-align: justify;
+	}
+}
+
+.engie-compteur__back {
+	padding: 10px 20px 10px 20px;
+	margin-right: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(247, 247, 247);
+	font-size: 13pt !important;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	pointer-events: auto;
+}
+
+.engie-compteur--hidden .engie-compteur__back {
+	pointer-events: none;
+}
+
+.engie-compteur__back:hover {
+	background: rgb(200, 200, 200);
+}
+
+.engie-compteur__back .icon {
+	margin-right: 5px;
+}
+
+.engie-compteur__form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.engie-compteur__form .submit {
+	height: 100%;
+	padding: 10px 20px 10px 20px;
+	font-size: 13pt;
+	color: rgb(80, 80, 80);
+	border-radius: 10px;
+	border: none;
+	box-shadow: 0px 0px 1px black;
+	cursor: pointer;
+	background: rgb(225, 225, 225);
+	transition: all 0.2s ease-out;
+}
+
+.engie-compteur__form .submit:hover {
+	background: rgb(200, 200, 200);
+}
+
+.engie-compteur__box {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+	.engie-compteur__box {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+}
+
+.engie-compteur__type {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 48%;
+	height: 100%;
+	margin: 0 10px 0 10px;
+}
+
+@media only screen and (max-width: 800px) {
+	.engie-compteur__type {
+		width: 80%;
+	}
+}
+
+.engie-compteur__type .title {
+	padding: 0 0 20px 0;
+	margin: 0;
+	text-align: center;
+	text-decoration: underline;
+	color: rgb(80, 80, 80);
+	pointer-events: none;
+}
+
+.engie-compteur__group {
+	width: 100%;
+	height: 40px;
+	box-shadow: 0px 0px 3px lime inset;
+	overflow: hidden;
+	display: flex;
+	position: relative;
+	box-shadow: 0px 0px 1px black;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.engie-compteur__group .icon {
+	width: 40px;
+	height: 100%;
+	overflow: hidden;
+	font-size: 13pt;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px 0 0 5px;
+	background: rgb(247, 247, 247);
+	color: rgb(80, 80, 80);
+}
+
+.engie-compteur__group .input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	margin: 0;
+	font-size: 13pt;
+	padding: 0 20px 0 20px;
+	color: rgb(80, 80, 80);
+}
+
+.engie-compteur__group .unit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 13pt;
+	padding: 10px 45px 0 0;
+	margin: 0;
+	color: rgb(80, 80, 80);
+	pointer-events: none;
+}
